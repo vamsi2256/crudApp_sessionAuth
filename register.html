@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <style>
+          #err{
+            color: red;
+          }
+        </style>
+    </head>
+    <body>
+        <form class="box" action="http://localhost:3006/signup" method="POST" onsubmit="return checkform()">
+            <div>
+              <h2>Register</h2>
+              <input type="text" placeholder="Enter your Surname" name="fname" id="fname" required>
+              <input type="text" placeholder="Enter Your Name" name="lname" id="lname" required>
+              <input type="date" placeholder="Enter Date" name="date" id="date" required>
+              <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <input type="email" placeholder="Enter Email" name="email" id="email" required>
+              <input type="number" placeholder="Enter Phone Number" name="mobile" id="mobile" pattern="[6789][0-9]{9}" required>
+              <textarea placeholder="Enter your address" name="address" id="address"></textarea>
+              <input type="password" placeholder="Enter Password" name="psw" id="psw"  required>
+              <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+              <input type="submit" class="registerbtn" value="Register">
+            </div>
+            <p id="err"><%=error%></p>
+            <div class="container signin">
+              <p>Already have an account? <a href="http://localhost:3006/login">Login</a>.</p>
+            </div>
+          </form>
+          <script>
+            var checkform =(e)=>{
+                let pass = document.getElementById("psw").value
+                let confirm_pass = document.getElementById("psw-repeat").value
+                if(pass!=confirm_pass){
+                    alert('Passwords are not matched')
+                    return false
+                }
+            }
+        </script>
+    </body>
+</html>

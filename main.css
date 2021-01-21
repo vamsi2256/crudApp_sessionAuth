@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color:#00CCFF;
+    background-position: center;
+    height:600px;
+    width:50px;
+}
+
+.box{
+    width: 350px;
+    padding: 40px;
+    border-radius: 70px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:#0002;
+    text-align:center;
+}
+.box input[type="text"],.box input[type="password"],.box select,.box input[type="email"],.box input[type="date"],.box textarea,.box input[type="number"]
+  {
+      background:white;
+      margin: 10px auto;
+      text-align: center;
+      border: 3px solid #000000;
+      padding:10px 8px;
+      width:300px;
+    outline: none;
+    color:black;
+    border-radius:24px; 
+    transition: 0.25s;
+  }
+.box input[type = "text"]:focus,.box input[type = "password"]:FOCUS,.box select :FOCUS,.box input[type = "email"]:FOCUS
+   {
+       width:320px;
+       
+   }
+    .box input[type="submit"]
+    {
+    background:powderblue;
+      display:block;
+      margin: 20px auto;
+      text-align: center;
+      font-size:15px;
+      font-weight:bold;
+      border: 3px solid #000000;
+      padding:14px 40px; 
+      width:150px;
+    outline: none;
+    color:black;
+    border-radius:24px; 
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  .box input[type="submit"]:hover{
+      width:150px;
+      background: #00ccff;
+      border: 5px solid #000000;
+      font-size:20px;
+  }
+::placeholder{
+color:black;
+opacity:0.9;
+}
+h3
+{
+  color: white;
+}
+  .button {
+background-color: #4CAF50; 
+border: none;
+cursor:pointer;
+padding: 10px 30px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 13px;
+border-radius:17px;
+
+}
+.button:hover {
+background-color:white;
+color:white;
+}
+.image{
+height:50px;
+width:50px;
+}
+.ima
+{
+     height:40px;
+    width:40px;
+}

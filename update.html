@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <style>
+          #success{
+            color: green;
+          }
+        </style>
+    </head>
+    <body onload="goBack()">
+        <form class="box" action="http://localhost:3006/update1" method="POST">
+            <div class="container">
+              <h1>Update</h1>             
+              <input type="text"  name="fname" id="fname" value=<%=data.first_name%> required>          
+              <input type="text" name="lname" id="lname" value=<%=data.last_name%> required>              
+              <input type="email"  name="email" id="email" value=<%=data.email%> required readonly>             
+              <input type="number"  name="mobile" id="mobile" value=<%=data.mobileNumber%>  required>             
+              <textarea  name="address" id="address"><%=data.address%></textarea>
+              <input type="submit" class="updatebtn" value="Update">
+            </div>
+            <p id="success"><%=message%></p>
+          </form>
+          <a href="http://localhost:3006/menu">Back</a>
+    </body>
+</html>

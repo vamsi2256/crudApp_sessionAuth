@@ -1,0 +1,56 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<link rel="stylesheet" type="text/css" href="main.css">
+<style>
+    #info{
+        color: red;
+    }
+    #success{
+        color: green;
+    }
+</style>
+</head>    
+<body>       
+    <form class="box" action="/signin" method="POST" onsubmit=storeform()>  
+        <div>    
+            <h1>Login Form </h1> 
+            <input type="email" placeholder="Enter Email" name="email" id="email" required>  
+            <br>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+            <br>  
+            <input type="checkbox" checked="checked" id ="check"> Remember me
+            <input type="submit" value="Login">       
+        </div>
+        <br> 
+        <a href="http://localhost:3006/forgot">Forget Password</a> 
+        <p id="info"><%=error%></p>  
+        <p id="success"><%=success%></p>
+        <p>Create Account...? <a href="http://localhost:3006/register">Register</a>.</p>
+    </form>
+    <script>
+        var storeform =()=>{
+        let check = document.getElementById("check");
+        if(check.checked){
+        let email = document.getElementById("email");
+        let password =document.getElementById("password");
+            localStorage.setItem("UserDetails",JSON.stringify({email:email.value,password:password.value}))
+        }
+        else{
+            localStorage.removeItem("UserDetails");
+            }
+        }
+        window.onload = ()=>{
+            let email = document.getElementById("email");
+            let password =document.getElementById("password");
+            let obj = JSON.parse(localStorage.getItem("UserDetails"));
+            if(obj){
+            email.value=obj.email;
+            password.value = obj.password;
+            }
+        }
+    </script> 
+</body>     
+</html>  
